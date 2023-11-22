@@ -23,9 +23,14 @@ test {
     useJUnitPlatform()
 }
 
-task Example(){
-    description ("")
+task greet {
+    description ("Gradle CLI")
+    doLast {
+        def studentName = project.hasProperty('student') ? project.property('student') : 'Dea'
+        println "Hello Jayjay, My Name is $studentName"
+    }
 }
+
 
 //def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
 //
