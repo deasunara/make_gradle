@@ -31,14 +31,17 @@ task greet {
     }
 }
 
+task helloJayjay() {
+    description ("menjalankan hello jayjay custom task")
 
-//def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
-//
-//task runCucumber()
-//{
-//   description ("menjalankan hello")
-//
-//    doLast {
-//        println "hello jayjay"
-//    }
-//}
+    doLast {
+        println "hello jayjay"
+    }
+}
+
+task greetingTask() {
+    doLast {
+        String nama = project.hasProperty('nama') ? project.property('nama') : 'Sunara'
+        println "Hello, $nama! Welcome to Gradle World!"
+    }
+}
